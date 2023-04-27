@@ -13,8 +13,7 @@ namespace EntityLayer.Concrete
         public string Title { get; set; }
         public string SubTitle { get; set; }
         public string PhotoUrl1 { get; set; }
-        public string PhotoUrl2 { get; set; }
-        public string PhotoUrl3 { get; set; }
+    
 
 
     }

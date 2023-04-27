@@ -11,6 +11,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
 builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
 
+builder.Services.AddScoped<ISliderPhotoService, SliderPhotoManager>();
+builder.Services.AddScoped<ISliderPhotoDal, EfSliderPhotoDal>();
+
+
 
 
 

@@ -1,12 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BusinessLayer.Abstract;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AkademiPlusFinishingProject.ViewComponents.Default
 {
     public class _Slider : ViewComponent
     {
+        private readonly ISliderPhotoService _sliderPhotoService;
+
+        public _Slider(ISliderPhotoService sliderPhotoService)
+        {
+            _sliderPhotoService = sliderPhotoService;
+        }
+
         public IViewComponentResult Invoke()
         {
-            return View();
+            var values = _sliderPhotoService.TGetList();
+            return View(values);
         }
     }
 }
