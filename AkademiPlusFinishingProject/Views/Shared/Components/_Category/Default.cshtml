@@ -1,0 +1,22 @@
+﻿@using EntityLayer.Concrete
+@model List<Category>
+
+<section class="categories">
+    <div class="container">
+        <div class="section-title">
+            <h2>Tüm Kategoriler</h2>
+            <p>Yeni Sezon Yaz Koleksiyonu </p>
+        </div>
+        <ul class="category-list">
+            @foreach (var x in Model)
+            {
+                <li class="category-item">
+                    <a href="#">
+                        <img src="@x.ImageUrl" alt="" class="category-image">
+                        <span class="category-title">@x.CategoryName</span>
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+</section>
