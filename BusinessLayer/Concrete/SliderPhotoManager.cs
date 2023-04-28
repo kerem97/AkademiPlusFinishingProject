@@ -29,7 +29,7 @@ namespace BusinessLayer.Concrete
             return _sliderPhotoDal.GetByID(id);
         }
 
-        public List<SliderPhoto> TGetListAll()
+        public List<SliderPhoto> TGetList()
         {
             return _sliderPhotoDal.GetListAll();
         }

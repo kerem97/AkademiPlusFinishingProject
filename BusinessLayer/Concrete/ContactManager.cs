@@ -4,6 +4,7 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,7 +29,7 @@ namespace BusinessLayer.Concrete
             return _contactDal.GetByID(id);
         }
 
-        public List<Contact> TGetListAll()
+        public List<Contact> TGetList()
         {
             return _contactDal.GetListAll();
         }

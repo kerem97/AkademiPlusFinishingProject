@@ -5,6 +5,7 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,10 +30,11 @@ namespace BusinessLayer.Concrete
             return _categoryDal.GetByID(id);
         }
 
-        public List<Category> TGetListAll()
+        public List<Category> TGetList()
         {
             return _categoryDal.GetListAll();
         }
+
 
         public void TInsert(Category t)
         {

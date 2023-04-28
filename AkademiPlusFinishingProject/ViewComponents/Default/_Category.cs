@@ -14,7 +14,7 @@ namespace AkademiPlusFinishingProject.ViewComponents.Default
 
         public IViewComponentResult Invoke()
         {
-            var values = _categoryService.TGetListAll();
+            var values = _categoryService.TGetList();
             return View(values);
         }
     }

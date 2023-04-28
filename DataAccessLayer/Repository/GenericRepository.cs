@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
+using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,5 +49,7 @@ namespace DataAccessLayer.Repository
             using var c = new Context();
             return c.Set<T>().ToList();
         }
+
+      
     }
 }

@@ -14,7 +14,7 @@ namespace AkademiPlusFinishingProject.Controllers
 
         public IActionResult Index()
         {
-            var values = _blogService.TGetListAll();
+            var values = _blogService.TGetList();
             return View(values);
         }
         public ActionResult BlogDetails(int id)

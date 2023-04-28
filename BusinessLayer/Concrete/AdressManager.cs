@@ -4,6 +4,7 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,6 +19,7 @@ namespace BusinessLayer.Concrete
             _adressDal = adressDal;
         }
 
+       
         public void TDelete(Adress t)
         {
             _adressDal.Delete(t);
@@ -28,11 +30,12 @@ namespace BusinessLayer.Concrete
             return _adressDal.GetByID(id);
         }
 
-        public List<Adress> TGetListAll()
+        public List<Adress> TGetList()
         {
             return _adressDal.GetListAll();
         }
 
+      
         public void TInsert(Adress t)
         {
             _adressDal.Insert(t);

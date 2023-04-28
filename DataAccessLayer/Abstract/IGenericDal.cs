@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EntityLayer.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -12,7 +13,6 @@ namespace DataAccessLayer.Abstract
         void Insert(T t);
         void Delete(T t);
         void Update(T t);
-        
 
         T GetByID(int id);
         List<T> GetListAll();

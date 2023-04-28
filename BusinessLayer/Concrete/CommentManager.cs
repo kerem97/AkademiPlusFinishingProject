@@ -4,6 +4,7 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,14 +29,18 @@ namespace BusinessLayer.Concrete
             return _commentDal.GetByID(id);
         }
 
-        public List<Comment> TGetListAll(int id)
+        public List<Comment> TGetList()
+        {
+            return _commentDal.GetListAll();
+        }
+        public List<Comment> TGetList(int id)
         {
             return _commentDal.GetListAll(x => x.BlogID == id);
         }
 
-        public List<Comment> TGetListAll()
+        public List<Comment> TGetListWithBlog()
         {
-            return _commentDal.GetListAll();
+            return _commentDal.GetListWithBlog();
         }
 
         public void TInsert(Comment t)
@@ -47,7 +52,5 @@ namespace BusinessLayer.Concrete
         {
             _commentDal.Update(t);
         }
-
-
     }
 }

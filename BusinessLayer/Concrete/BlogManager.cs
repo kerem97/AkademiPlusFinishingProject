@@ -5,6 +5,7 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -51,9 +52,11 @@ namespace BusinessLayer.Concrete
             return _blogDal.GetListAll(x => x.BLogID == id);
         }
 
-        public List<Blog> TGetListAll()
+        public List<Blog> TGetList()
         {
             return _blogDal.GetListAll();
         }
+
+       
     }
 }

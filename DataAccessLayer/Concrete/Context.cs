@@ -22,6 +22,7 @@ namespace DataAccessLayer.Concrete
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Comment> Comments { get; set; }
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<Employee> Employees { get; set; }

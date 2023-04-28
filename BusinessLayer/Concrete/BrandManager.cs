@@ -5,6 +5,7 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,10 +30,11 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        public List<Brand> TGetListAll()
+        public List<Brand> TGetList()
         {
             return _brandDal.GetListAll();
         }
+
 
         public void TInsert(Brand t)
         {

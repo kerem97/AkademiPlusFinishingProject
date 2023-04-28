@@ -6,20 +6,21 @@
                 <img src="img/avatars/avatar1.jpg" alt="">
             </div>
             @foreach (var x in Model)
-            {                        
-            <div class="comment-text">
+            {
+                <div class="comment-text">
 
-                <div class="comment-meta">
-                    <strong>admin</strong>
-                    <span>-</span>
-                    <time>April 23, 2022</time>
+                    <div class="comment-meta">
+                        <strong>@x.UserName</strong>
+                        <span>-</span>
+                        <time>@(((DateTime)x.CommentDate).ToString("dd-MMM-yyyy"))</time>
+                    </div>
+                    <div class="comment-description">
+                        <p>@x.Content</p>
+                    </div>
+
                 </div>
-                <div class="comment-description">
-                    <p>@x.Content</p>
-                </div>
-                
-            </div>
             }
         </li>
     </ol>
 </div>
+

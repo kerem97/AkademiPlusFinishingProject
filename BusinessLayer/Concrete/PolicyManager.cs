@@ -29,7 +29,7 @@ namespace BusinessLayer.Concrete
             return _policyDal.GetByID(id);
         }
 
-        public List<Policy> TGetListAll()
+        public List<Policy> TGetList()
         {
             return _policyDal.GetListAll();
         }

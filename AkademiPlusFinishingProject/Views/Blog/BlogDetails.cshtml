@@ -24,7 +24,7 @@
                         </div>
                         <div class="blog-date">
                             <a href="#">
-                                April 25, 2022
+                                @(((DateTime)x.AddDate).ToString("dd-MMM-yyyy"))
                             </a>
                         </div>
                         <div class="blog-tags">
@@ -32,7 +32,7 @@
                             <a href="#">coats</a>
                         </div>
                     </div>
-                    <h1 class="blog-title">The Best Products That Shape Fashion</h1>
+                    <h1 class="blog-title">@x.Title</h1>
                     <div class="blog-content">
                         <p>
                             @x.Description
@@ -45,7 +45,7 @@
 
         <div class="tab-panel-reviews">
             <h3>2 reviews for Basic Colored Sweatpants With Elastic Hems</h3>
-            @*  @await Component.InvokeAsync("_CommentListByBlog",new{id=ViewBag.i})*@
+              @await Component.InvokeAsync("_CommentListByBlog",new{id=ViewBag.i})
             <!-- comment form start -->
             <div class="review-form-wrapper">
                 <h2>Add a review</h2>
