@@ -9,5 +9,8 @@ namespace BusinessLayer.Abstract
 {
     public interface IBlogService : IGenericService<Blog>
     {
+        List<Blog> TGetBlogByCategory();
+        List<Blog> TGetBlogByID(int id);
+
     }
 }

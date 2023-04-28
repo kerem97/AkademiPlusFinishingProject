@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -23,15 +24,17 @@ namespace BusinessLayer.Concrete
             _blogDal.Delete(t);
         }
 
+        public List<Blog> TGetBlogByCategory()
+        {
+            return _blogDal.GetListbyCategory();
+        }
+
         public Blog TGetByID(int id)
         {
             return _blogDal.GetByID(id);
         }
 
-        public List<Blog> TGetList()
-        {
-            return _blogDal.GetList();
-        }
+
 
         public void TInsert(Blog t)
         {
@@ -41,6 +44,16 @@ namespace BusinessLayer.Concrete
         public void TUpdate(Blog t)
         {
             _blogDal.Update(t);
+        }
+
+        public List<Blog> TGetBlogByID(int id)
+        {
+            return _blogDal.GetListAll(x => x.BLogID == id);
+        }
+
+        public List<Blog> TGetListAll()
+        {
+            return _blogDal.GetListAll();
         }
     }
 }

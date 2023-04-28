@@ -1,12 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BusinessLayer.Abstract;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AkademiPlusFinishingProject.ViewComponents.Default
 {
     public class _Brand : ViewComponent
     {
+        private readonly IBrandService _brandService;
+
+        public _Brand(IBrandService brandService)
+        {
+            _brandService = brandService;
+        }
+
         public IViewComponentResult Invoke()
         {
-            return View();
+            var values = _brandService.TGetListAll();
+            return View(values);
         }
     }
 }

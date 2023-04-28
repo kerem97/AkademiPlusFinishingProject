@@ -28,9 +28,9 @@ namespace BusinessLayer.Concrete
             return _adressDal.GetByID(id);
         }
 
-        public List<Adress> TGetList()
+        public List<Adress> TGetListAll()
         {
-            return _adressDal.GetList();
+            return _adressDal.GetListAll();
         }
 
         public void TInsert(Adress t)

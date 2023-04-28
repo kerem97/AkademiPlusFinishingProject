@@ -14,7 +14,7 @@ namespace AkademiPlusFinishingProject.ViewComponents.Default
 
         public IViewComponentResult Invoke()
         {
-            var values = _sliderPhotoService.TGetList();
+            var values = _sliderPhotoService.TGetListAll();
             return View(values);
         }
     }

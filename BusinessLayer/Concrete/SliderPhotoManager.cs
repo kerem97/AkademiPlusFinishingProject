@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -28,9 +29,9 @@ namespace BusinessLayer.Concrete
             return _sliderPhotoDal.GetByID(id);
         }
 
-        public List<SliderPhoto> TGetList()
+        public List<SliderPhoto> TGetListAll()
         {
-            return _sliderPhotoDal.GetList();
+            return _sliderPhotoDal.GetListAll();
         }
 
         public void TInsert(SliderPhoto t)

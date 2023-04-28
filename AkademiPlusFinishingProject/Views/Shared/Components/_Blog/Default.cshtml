@@ -1,61 +1,33 @@
-﻿<section class="blogs">
+﻿@using EntityLayer.Concrete
+@model List<Blog>
+
+<section class="blogs">
     <div class="container">
         <div class="section-title">
-            <h2>From Our Blog</h2>
-            <p>Summer Collection New Morden Design</p>
+            <h2>Bloglarımız</h2>
+            <p>Tavsiyelerimiz İçin Bloglarımıza Göz Atabilirsiniz</p>
         </div>
         <ul class="blog-list">
-            <li class="blog-item">
-                <a href="#" class="blog-image">
-                    <img src="~/e-commerce/img/blogs/blog1.jpg" alt="">
-                </a>
-                <div class="blog-info">
-                    <div class="blog-info-top">
-                        <span>25 Feb, 2021 </span> -
-                        <span>0 Comments</span>
+            @foreach (var x in Model)
+            {
+                <li class="blog-item">
+                    <a href="#" class="blog-image">
+                        <img src="@x.BlogImage" alt="">
+                    </a>
+                    <div class="blog-info">
+                        <div class="blog-info-top">
+                            <span>@(((DateTime)x.AddDate).ToString("dd-MMM-yyyy"))</span> -
+                            <span>0 Yorum</span>
+                        </div>
+                        <div class="blog-info-center">
+                            <a href="#">@x.Title</a>
+                        </div>
+                        <div class="blog-info-bottom">
+                            <a href="/Blog/BlogDetails/@x.BLogID">Devamını Gör</a>
+                        </div>
                     </div>
-                    <div class="blog-info-center">
-                        <a href="#">Aliquam hendrerit mi metus</a>
-                    </div>
-                    <div class="blog-info-bottom">
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-            </li>
-            <li class="blog-item">
-                <a href="#" class="blog-image">
-                    <img src="~/e-commerce/img/blogs/blog2.jpg" alt="">
-                </a>
-                <div class="blog-info">
-                    <div class="blog-info-top">
-                        <span>25 Feb, 2021 </span> -
-                        <span>0 Comments</span>
-                    </div>
-                    <div class="blog-info-center">
-                        <a href="#">Aliquam hendrerit mi metus</a>
-                    </div>
-                    <div class="blog-info-bottom">
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-            </li>
-            <li class="blog-item">
-                <a href="#" class="blog-image">
-                    <img src="~/e-commerce/img/blogs/blog3.jpg" alt="">
-                </a>
-                <div class="blog-info">
-                    <div class="blog-info-top">
-                        <span>25 Feb, 2021 </span> -
-                        <span>0 Comments</span>
-                    </div>
-                    <div class="blog-info-center">
-                        <a href="#">Aliquam hendrerit mi metus</a>
-                    </div>
-                    <div class="blog-info-bottom">
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-            </li>
+                </li>
+            }
         </ul>
     </div>
 </section>

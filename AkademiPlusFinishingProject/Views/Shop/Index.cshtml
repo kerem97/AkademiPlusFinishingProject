@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+@await Component.InvokeAsync("_Category")
+
+@await Component.InvokeAsync("_Product1")
+
+@await Component.InvokeAsync("_CampaignSingle")
+
+@await Component.InvokeAsync("_Product2")

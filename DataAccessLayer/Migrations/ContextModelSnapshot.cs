@@ -188,7 +188,17 @@ namespace DataAccessLayer.Migrations
                     b.Property<DateTime>("AddDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("BlogName")
+                    b.Property<int?>("AppUserID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("BlogImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CategoryID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -198,7 +208,28 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("BLogID");
 
+                    b.HasIndex("AppUserID");
+
+                    b.HasIndex("CategoryID");
+
                     b.ToTable("Blogs");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Brand", b =>
+                {
+                    b.Property<int>("BrandID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BrandID"), 1L, 1);
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("BrandID");
+
+                    b.ToTable("Brands");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Category", b =>
@@ -223,6 +254,43 @@ namespace DataAccessLayer.Migrations
                     b.HasKey("CategoryID");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Comment", b =>
+                {
+                    b.Property<int>("CommentID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CommentID"), 1L, 1);
+
+                    b.Property<int?>("AppUserID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BlogID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CommentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CommentID");
+
+                    b.HasIndex("AppUserID");
+
+                    b.HasIndex("BlogID");
+
+                    b.ToTable("Comment");
                 });
 
             modelBuilder.Entity("EntityLayer.Concrete.Contact", b =>
@@ -388,6 +456,31 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("NewArrivals");
                 });
 
+            modelBuilder.Entity("EntityLayer.Concrete.Policy", b =>
+                {
+                    b.Property<int>("PolicyID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PolicyID"), 1L, 1);
+
+                    b.Property<string>("Icon")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SubTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("PolicyID");
+
+                    b.ToTable("Policies");
+                });
+
             modelBuilder.Entity("EntityLayer.Concrete.SliderPhoto", b =>
                 {
                     b.Property<int>("SliderPhotoID")
@@ -516,6 +609,40 @@ namespace DataAccessLayer.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("EntityLayer.Concrete.Blog", b =>
+                {
+                    b.HasOne("EntityLayer.Concrete.AppUser", "AppUser")
+                        .WithMany("Blogs")
+                        .HasForeignKey("AppUserID");
+
+                    b.HasOne("EntityLayer.Concrete.Category", "Category")
+                        .WithMany("Blogs")
+                        .HasForeignKey("CategoryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Comment", b =>
+                {
+                    b.HasOne("EntityLayer.Concrete.AppUser", "AppUser")
+                        .WithMany("Comments")
+                        .HasForeignKey("AppUserID");
+
+                    b.HasOne("EntityLayer.Concrete.Blog", "Blog")
+                        .WithMany("Comments")
+                        .HasForeignKey("BlogID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppUser");
+
+                    b.Navigation("Blog");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("EntityLayer.Concrete.AppRole", null)
@@ -565,6 +692,23 @@ namespace DataAccessLayer.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.AppUser", b =>
+                {
+                    b.Navigation("Blogs");
+
+                    b.Navigation("Comments");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Blog", b =>
+                {
+                    b.Navigation("Comments");
+                });
+
+            modelBuilder.Entity("EntityLayer.Concrete.Category", b =>
+                {
+                    b.Navigation("Blogs");
                 });
 #pragma warning restore 612, 618
         }

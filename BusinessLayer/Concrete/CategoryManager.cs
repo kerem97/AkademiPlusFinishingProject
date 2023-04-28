@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -28,9 +29,9 @@ namespace BusinessLayer.Concrete
             return _categoryDal.GetByID(id);
         }
 
-        public List<Category> TGetList()
+        public List<Category> TGetListAll()
         {
-            return _categoryDal.GetList();
+            return _categoryDal.GetListAll();
         }
 
         public void TInsert(Category t)

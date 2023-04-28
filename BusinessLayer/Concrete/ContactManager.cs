@@ -28,9 +28,9 @@ namespace BusinessLayer.Concrete
             return _contactDal.GetByID(id);
         }
 
-        public List<Contact> TGetList()
+        public List<Contact> TGetListAll()
         {
-            return _contactDal.GetList();
+            return _contactDal.GetListAll();
         }
 
         public void TInsert(Contact t)

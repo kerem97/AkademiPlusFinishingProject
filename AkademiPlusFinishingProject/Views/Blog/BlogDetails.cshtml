@@ -1,0 +1,59 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Blog>
+@{
+    ViewData["Title"] = "BlogDetails";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+<section class="single-blog">
+    <div class="container">
+
+        <article>
+            @foreach (var x in Model)
+            {
+                <figure>
+                    <a href="#">
+                        <img src="@x.BlogImage" alt="">
+                    </a>
+                </figure>
+                <div class="blog-wrapper">
+                    <div class="blog-meta">
+                        <div class="blog-category">
+                            <a href="#">
+                                COLLECTION
+                            </a>
+                        </div>
+                        <div class="blog-date">
+                            <a href="#">
+                                April 25, 2022
+                            </a>
+                        </div>
+                        <div class="blog-tags">
+                            <a href="#">products</a>,
+                            <a href="#">coats</a>
+                        </div>
+                    </div>
+                    <h1 class="blog-title">The Best Products That Shape Fashion</h1>
+                    <div class="blog-content">
+                        <p>
+                            @x.Description
+                        </p>
+                    </div>
+                </div>
+            }
+        </article>
+
+
+        <div class="tab-panel-reviews">
+            <h3>2 reviews for Basic Colored Sweatpants With Elastic Hems</h3>
+            @*  @await Component.InvokeAsync("_CommentListByBlog",new{id=ViewBag.i})*@
+            <!-- comment form start -->
+            <div class="review-form-wrapper">
+                <h2>Add a review</h2>
+                @await Html.PartialAsync("~/Views/Comment/PartialAddcomment.cshtml")
+                <br />
+            </div>
+            <!-- comment form end -->
+        </div>
+
+    </div>
+</section>

@@ -1,12 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BusinessLayer.Abstract;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AkademiPlusFinishingProject.ViewComponents.Default
 {
     public class _Blog : ViewComponent
     {
+        private readonly IBlogService _blogService;
+
+        public _Blog(IBlogService blogService)
+        {
+            _blogService = blogService;
+        }
+
         public IViewComponentResult Invoke()
         {
-            return View();
+            var values = _blogService.TGetListAll();
+            return View(values);
         }
     }
 }

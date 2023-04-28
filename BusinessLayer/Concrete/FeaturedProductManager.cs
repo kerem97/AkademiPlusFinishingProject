@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -28,9 +29,9 @@ namespace BusinessLayer.Concrete
             return _featuredProductDal.GetByID(id);
         }
 
-        public List<FeaturedProduct> TGetList()
+        public List<FeaturedProduct> TGetListAll()
         {
-            return _featuredProductDal.GetList();
+            return _featuredProductDal.GetListAll();
         }
 
         public void TInsert(FeaturedProduct t)

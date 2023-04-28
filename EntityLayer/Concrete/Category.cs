@@ -15,5 +15,7 @@ namespace EntityLayer.Concrete
         public string ImageUrl { get; set; }
 
         public bool Status { get; set; }
+
+        public List<Blog> Blogs { get; set; }
     }
 }

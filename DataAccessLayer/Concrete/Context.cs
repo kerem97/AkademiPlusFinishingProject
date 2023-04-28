@@ -19,6 +19,7 @@ namespace DataAccessLayer.Concrete
 
         public DbSet<Adress> Adresses { get; set; }
         public DbSet<Blog> Blogs { get; set; }
+        public DbSet<Brand> Brands { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Customer> Customers { get; set; }
 
@@ -30,6 +31,7 @@ namespace DataAccessLayer.Concrete
         public DbSet<NewArrival> NewArrivals { get; set; }
 
         public DbSet<SliderPhoto> SliderPhotos { get; set; }
+        public DbSet<Policy> Policies { get; set; }
 
     }
 }

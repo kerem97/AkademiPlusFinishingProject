@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+<section class="contact">
+    @await Component.InvokeAsync("_ContactTop")
+    <div class="contact-bottom">
+        <div class="container">
+            @await Component.InvokeAsync("_ContactTitles")
+            <div class="contact-elements">
+                @await Component.InvokeAsync("_Contactform")
+                @await Component.InvokeAsync("_ContactInfo")
+            </div>
+        </div>
+    </div>
+</section>
