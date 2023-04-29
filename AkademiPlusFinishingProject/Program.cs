@@ -30,8 +30,9 @@ builder.Services.AddScoped<IPolicyDal, EfPolicyDal>();
 builder.Services.AddScoped<ICommentService, CommentManager>();
 builder.Services.AddScoped<ICommentDal, EfCommentDal>();
 
-builder.Services.AddScoped<IBlogService, BlogManager>();
-builder.Services.AddScoped<IBlogDal, EfBlogDal>();
+builder.Services.AddScoped<IContactService, ContactManager>();
+builder.Services.AddScoped<IContactDal, EfContactDal>();
+
 
 
 

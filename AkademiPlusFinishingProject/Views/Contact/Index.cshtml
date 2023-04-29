@@ -1,4 +1,5 @@
-﻿@{
+﻿@model EntityLayer.Concrete.Contact
+@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_UILayout.cshtml";
 }
@@ -9,7 +10,37 @@
         <div class="container">
             @await Component.InvokeAsync("_ContactTitles")
             <div class="contact-elements">
-                @await Component.InvokeAsync("_Contactform")
+                <form class="contact-form" method="post">
+                    <div class="">
+                        <label>
+                            Adınız Soyadınız
+                            <span>*</span>
+                        </label>
+                        <input type="text" required name="NameSurname">
+                    </div>
+                    <div class="">
+                        <label>
+                            Mail Adresiniz
+                            <span>*</span>
+                        </label>
+                        <input type="text" required name="Email">
+                    </div>
+                    <div class="">
+                        <label>
+                            Konu
+                            <span>*</span>
+                        </label>
+                        <input type="text" required name="Subject">
+                    </div>
+                    <div class="">
+                        <label>
+                            Your message
+                            <span>*</span>
+                        </label>
+                        <textarea id="author" name="Message" type="text" value="" size="30" required=""></textarea>
+                    </div>
+                    <button class="btn btn-sm form-button">Gönder</button>
+                </form>
                 @await Component.InvokeAsync("_ContactInfo")
             </div>
         </div>

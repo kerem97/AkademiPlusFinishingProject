@@ -45,11 +45,36 @@
 
         <div class="tab-panel-reviews">
             <h3>2 reviews for Basic Colored Sweatpants With Elastic Hems</h3>
-              @await Component.InvokeAsync("_CommentListByBlog",new{id=ViewBag.i})
+            @await Component.InvokeAsync("_CommentListByBlog",new{id=ViewBag.i})
             <!-- comment form start -->
             <div class="review-form-wrapper">
                 <h2>Add a review</h2>
-                @await Html.PartialAsync("~/Views/Comment/PartialAddcomment.cshtml")
+                <form class="comment-form" method="post" action="/Comment/Addcomment">
+                    <input type="hidden" name="BLogID" value="@ViewBag.i" />
+                    <p class="comment-notes">
+                        Mail adresiniz üçücü kişiler ile paylaşılmayacaktır.Zorunlu alanlar * ile belirtilmiştir.
+                        <span class="required">* </span>
+                    </p>
+                    <div class="comment-form-comment form-comment">
+                        <label for="comment">Yorumunuz <span class="required">*</span></label>
+                        <textarea id="comment" name="Content" cols="50" rows="10"></textarea>
+                    </div>
+                    <div class="comment-form-author form-comment">
+                        <label for="name">İsminiz <span class="required">*</span></label>
+                        <input id="name" name="UserName" type="text">
+                    </div>
+                    <input type="hidden" name="CommentDate" value="@DateTime.Now.ToShortDateString()" />
+
+                    <div class="comment-form-email form-comment">
+                        <label for="email">Email<span class="required">*</span></label>
+                        <input id="email" name="Email" type="email">
+                    </div>
+                    <div class="form-submit">
+                        @*  <input type="submit" class="btn submit">*@
+                        <button type="submit" class="btn btn-primary-submit">Yorum Yap</button>
+                    </div>
+                </form>
+
                 <br />
             </div>
             <!-- comment form end -->
@@ -57,3 +82,5 @@
 
     </div>
 </section>
+
+@*@await Html.PartialAsync("~/Views/Comment/PartialAddcomment.cshtml",Model)*@

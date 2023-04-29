@@ -16,7 +16,7 @@
             @foreach (var x in Model)
             {
                 <li class="blog-item">
-                    <a href="#" class="blog-image">
+                    <a href="/Blog/BlogDetails/@x.BLogID" class="blog-image">
                         <img src="@x.BlogImage" alt="">
                     </a>
                     <div class="blog-info">
@@ -25,7 +25,7 @@
                             <span>0 Yorum</span>
                         </div>
                         <div class="blog-info-center">
-                            <a href="#">@x.Title</a>
+                            <a href="/Blog/BlogDetails/@x.BLogID">@x.Title</a>
                         </div>
                         <div class="blog-info-bottom">
                             <a href="/Blog/BlogDetails/@x.BLogID">Devamını Gör</a>
