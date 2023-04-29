@@ -1,0 +1,88 @@
+﻿@model AkademiPlusFinishingProject.Models.RegisterViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <title>Border Register Form Flat Responsive Widget Template :: w3layouts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Border Register Form a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link rel="stylesheet" href="~/border_register_form-web/css/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="~/border_register_form-web/css/font-awesome.css" type="text/css" media="all">
+    <link href="//fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+</head>
+<body>
+    <h1 class="title-agile text-center">Clotya Kayıt Formu</h1>
+    <div class="content-w3ls">
+        <div class="content-bottom">
+            <h2>Buradan Kayıt Ol <i class="fa fa-hand-o-down" aria-hidden="true"></i></h2>
+
+            <form method="post">
+                <div class="field-group">
+                    <span class="fa fa-user" aria-hidden="true"></span>
+                    <div class="wthree-field">
+                        <input type="text" asp-for="Name" placeholder="İsim">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <span class="fa fa-user" aria-hidden="true"></span>
+                    <div class="wthree-field">
+                        <input type="text" asp-for="Surname" placeholder="Soyisim">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <span class="fa fa-user" aria-hidden="true"></span>
+                    <div class="wthree-field">
+                        <input type="text" asp-for="City" placeholder="Şehir">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <span class="fa fa-user" aria-hidden="true"></span>
+                    <div class="wthree-field">
+                        <input type="text" asp-for="Username" placeholder="Kullanıcı Adı">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <span class="fa fa-envelope" aria-hidden="true"></span>
+                    <div class="wthree-field">
+                        <input asp-for="Email" type="email" placeholder="Mail Adresi">
+                    </div>
+                </div>
+                <div class="field-group">
+                    <span class="fa fa-lock" aria-hidden="true"></span>
+                    <div class="wthree-field">
+                        <input asp-for="Password" type="Password" placeholder="Şifre">
+                    </div>
+                </div>
+                    <div class="wthree-field">
+                <input id="saveForm" type="submit" value="Register" />
+                </div>
+               @* <button class="btn btn-outline-primary">Kayıt ol</button>*@
+                <div class="account">
+                    <p class="text-center">Bir Hesabın Var Mı ? <a href="/Login/Index/">Login</a></p>
+                </div>
+                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+            </form>
+        </div>
+    </div>
+    <div class="copyright text-center">
+        <p>
+            © @DateTime.Now.Year Tüm Hakları Saklıdır. | Design by
+            <a href="http://w3layouts.com">W3layouts</a>
+        </p>
+    </div>
+</body>
+</html>

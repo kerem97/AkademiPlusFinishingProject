@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,6 +9,7 @@ namespace AkademiPlusFinishingProject.Controllers
     {
         private readonly IBlogService _blogService;
         private readonly ICommentService _commentService;
+        Context c = new Context();
 
         public BlogController(IBlogService blogService, ICommentService commentService)
         {
@@ -17,7 +19,9 @@ namespace AkademiPlusFinishingProject.Controllers
 
         public IActionResult Index()
         {
+
             var values = _blogService.TGetList();
+          
             return View(values);
         }
 
@@ -28,6 +32,6 @@ namespace AkademiPlusFinishingProject.Controllers
             return View(values);
         }
 
-       
+
     }
 }

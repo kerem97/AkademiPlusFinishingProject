@@ -32,6 +32,7 @@ namespace DataAccessLayer.Concrete
         public DbSet<NewArrival> NewArrivals { get; set; }
 
         public DbSet<SliderPhoto> SliderPhotos { get; set; }
+        public DbSet<Subscribe> Subscribes { get; set; }
         public DbSet<Policy> Policies { get; set; }
 
     }

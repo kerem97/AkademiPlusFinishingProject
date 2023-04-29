@@ -1,7 +1,10 @@
+using AkademiPlusFinishingProject.Models;
 using BusinessLayer.Abstract;
 using BusinessLayer.Concrete;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,6 +35,12 @@ builder.Services.AddScoped<ICommentDal, EfCommentDal>();
 
 builder.Services.AddScoped<IContactService, ContactManager>();
 builder.Services.AddScoped<IContactDal, EfContactDal>();
+
+builder.Services.AddScoped<ISubscribeService, SubscribeManager>();
+builder.Services.AddScoped<ISubscribeDal, EfSubscribeDal>();
+
+builder.Services.AddDbContext<Context>();
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
 
 
 
