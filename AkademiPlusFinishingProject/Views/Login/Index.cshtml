@@ -1,0 +1,84 @@
+﻿@model AkademiPlusFinishingProject.Models.LoginViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE HTML>
+<html lang="zxx">
+
+<head>
+    <title>Cotleye Üye Girişi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Effect Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link rel="stylesheet" href="~/effect_login_form-web/css/style.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/effect_login_form-web/css/fontawesome-all.css">
+    <link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="bg">
+        <canvas></canvas>
+        <canvas></canvas>
+        <canvas></canvas>
+    </div>
+    <h1>Cotleya Giriş Sayfası</h1>
+    <div class="sub-main-w3">
+        <form method="post">
+            <h2>
+                Giriş Yap
+                <i class="fas fa-level-down-alt"></i>
+            </h2>
+            <div class="form-style-agile">
+                <label>
+                    <i class="fas fa-user"></i>
+                    Kullanıcı Adınız
+                </label>
+                <input placeholder="Kullanıcı adınız" asp-for="Username" type="text" required="">
+            </div>
+            <div class="form-style-agile">
+                <label>
+                    <i class="fas fa-unlock-alt"></i>
+                    Şifre
+                </label>
+                <input placeholder="Şifreniz" asp-for="Password" type="password" required="">
+            </div>
+            <div class="wthree-text">
+                <ul>
+                    <li>
+                        <label class="anim">
+                            <input type="checkbox" class="checkbox">
+                            <span>Stay Signed In</span>
+                        </label>
+                    </li>
+                    <li>
+                        <a href="#">Şifremi Unuttum</a>
+                    </li>
+                </ul>
+            </div>
+            <input type="submit" value="Log In">
+        </form>
+    </div>
+    <div class="footer">
+        <p>
+            &copy; @DateTime.Now.Year Tüm hakları saklıdır | Design by
+            <a href="http://w3layouts.com">W3layouts</a>
+        </p>
+    </div>
+    <script src="~/effect_login_form-web/js/jquery-3.3.1.min.js"></script>
+    <script src="~/effect_login_form-web/js/canva_moving_effect.js"></script>
+
+
+</body>
+
+</html>

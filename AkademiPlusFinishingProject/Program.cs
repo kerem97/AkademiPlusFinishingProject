@@ -5,6 +5,9 @@ using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +25,12 @@ builder.Services.AddScoped<INewArrivalDal, EfNewArrivalDal>();
 
 builder.Services.AddScoped<IBlogService, BlogManager>();
 builder.Services.AddScoped<IBlogDal, EfBlogDal>();
+
+builder.Services.AddScoped<IBrandService, BrandManager>();
+builder.Services.AddScoped<IBrandDal, EfBrandDal>();
+
+builder.Services.AddScoped<ICategoryService, CategoryManager>();
+builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
 
 
 builder.Services.AddScoped<IBrandService, BrandManager>();
@@ -42,6 +51,43 @@ builder.Services.AddScoped<ISubscribeDal, EfSubscribeDal>();
 builder.Services.AddDbContext<Context>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>().AddErrorDescriber<CustomIdentityValidator>();
 
+builder.Services.AddMvc(config =>
+{
+    var policy = new AuthorizationPolicyBuilder()
+    .RequireAuthenticatedUser()
+    .Build();
+    config.Filters.Add(new AuthorizeFilter(policy));
+});
+
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Login/Index/";
+
+});
+
+
+builder.Services.AddSession();
+
+
+//builder.Services.AddIdentity<AppUser, AppRole>(options =>
+//{
+
+//    options.Password.RequiredLength = 10;
+//    options.Password.RequiredUniqueChars = 3;
+
+//    options.SignIn.RequireConfirmedEmail = true;
+//}).AddEntityFrameworkStores<Context>()
+//  .AddDefaultTokenProviders();
+
+
+
+
+
+
+
+
+
 
 
 
@@ -61,13 +107,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-
-
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-
+app.UseAuthentication();
 
 app.UseEndpoints(endpoints =>
 {
@@ -76,4 +116,11 @@ app.UseEndpoints(endpoints =>
       pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
     );
 });
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
+
 app.Run();

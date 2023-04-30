@@ -1,0 +1,105 @@
+﻿@using AkademiPlusFinishingProject.Areas.Member.Models
+@model UserEditViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MemberLayout.cshtml";
+}
+<h3>Profil  Düzenleme Sayfası</h3>
+@*<form met></form>
+<div class="card-body">
+    <form>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label" for="basic-icon-default-fullname">Adınız</label>
+            <div class="col-sm-10">
+                <div class="input-group input-group-merge">
+                    <span id="basic-icon-default-fullname2" class="input-group-text">
+                        <i class="bx bx-user"></i>
+                    </span>
+                    <input type="text" asp-for="name" class="form-control" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label" for="basic-icon-default-fullname">Soyadınız</label>
+            <div class="col-sm-10">
+                <div class="input-group input-group-merge">
+                    <span id="basic-icon-default-fullname2" class="input-group-text">
+                        <i class="bx bx-user"></i>
+                    </span>
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 col-form-label" for="basic-icon-default-email">Mail Adresiniz</label>
+            <div class="col-sm-10">
+                <div class="input-group input-group-merge">
+                    <span class="input-group-text"><i class="bx bx-envelope"></i></span>
+                    <input type="text" class="form-control" />
+
+                </div>
+
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 form-label" for="basic-icon-default-phone">Telefon Numaranız</label>
+            <div class="col-sm-10">
+                <div class="input-group input-group-merge">
+                    <span id="basic-icon-default-phone2" class="input-group-text">
+                        <i class="bx bx-phone"></i>
+                    </span>
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-2 form-label" for="basic-icon-default-phone">Şifreniz</label>
+            <div class="col-sm-10">
+                <div class="input-group input-group-merge">
+                    <span id="basic-icon-default-phone2" class="input-group-text">
+                        <i class="bx bx-phone"></i>
+                    </span>
+                    <input type="password" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-end">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Send</button>
+            </div>
+        </div>
+    </form>
+</div>*@
+<br />
+<form method="post" enctype="multipart/form-data">
+    @Html.Label("Adınız")
+    <input asp-for="name" class="form-control" />
+    <br />
+    @Html.Label("Soyadınız")
+    <input asp-for="surname" class="form-control" />
+    <br />
+    @Html.Label("Mail Adresiniz")
+    <input asp-for="mail" class="form-control" />
+    <br />
+    @Html.Label("Şifreniz")
+    <input type="password" asp-for="password" class="form-control" />
+    <br />
+    @Html.Label("Şifre Onayı")
+    <input type="password" asp-for="confirmpassword" class="form-control" />
+    <br />
+    @Html.Label("İletişim Bilgisi")
+    <input asp-for="phonenumber" class="form-control" />
+    <br />
+    <div class="form-group">
+        <label>Bir resim seçin</label>
+        <input type="file" asp-for="Image" />
+    </div>
+    <br />
+  
+    <button class="btn btn-outline-info">Kaydet</button>
+
+
+</form>
+
