@@ -27,7 +27,7 @@ namespace AkademiPlusFinishingProject.Areas.Member.Controllers
             p.surname = values.Surname;
             p.mail = values.Email;
             p.phonenumber = values.PhoneNumber;
-
+            ViewBag.userImage = values.ImageUrl;
             return View(p);
         }
 

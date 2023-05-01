@@ -13,6 +13,12 @@ namespace DataAccessLayer.EntityFramework
 {
     public class EfBlogDal : GenericRepository<Blog>, IBlogDal
     {
+        public List<Blog> GetLast3Blog()
+        {
+            var context = new Context();
+            return context.Blogs.Take(3).OrderByDescending(x => x.BLogID).ToList();
+        }
+
         public List<Blog> GetListbyCategory()
         {
             using (var c = new Context())

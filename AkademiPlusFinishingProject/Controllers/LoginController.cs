@@ -24,6 +24,7 @@ namespace AkademiPlusFinishingProject.Controllers
             return View();
         }
         [HttpPost]
+        
         public async Task<IActionResult> Index(LoginViewModel lgn)
         {
             AppUser appUser = await _userManager.FindByNameAsync(lgn.Username);
@@ -34,6 +35,7 @@ namespace AkademiPlusFinishingProject.Controllers
             {
                 return RedirectToAction("Index", "Dashboard", new { area = "Member" });
             }
+
             //else
             //{
             //    ModelState.AddModelError(" ", "Lütfen mail adresinizi onaylayınız");
@@ -47,5 +49,17 @@ namespace AkademiPlusFinishingProject.Controllers
             }
             return View();
         }
+        public async Task<IActionResult> Logout()
+        {
+
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Login");
+        }
+
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
+
     }
 }

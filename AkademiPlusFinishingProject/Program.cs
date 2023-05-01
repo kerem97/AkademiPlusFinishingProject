@@ -62,7 +62,11 @@ builder.Services.AddMvc(config =>
 
 builder.Services.ConfigureApplicationCookie(options =>
 {
-    options.LoginPath = "/Login/Index/";
+    options.Cookie.HttpOnly = true;
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(50);
+    options.AccessDeniedPath = new PathString("/Login/AccessDenied");
+    options.LoginPath = "/Login/Index";
+    options.SlidingExpiration = true;
 
 });
 
