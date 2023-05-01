@@ -51,7 +51,7 @@ namespace AkademiPlusFinishingProject.Areas.Member.Controllers
             var result = await _userManager.UpdateAsync(user);
             if (result.Succeeded)
             {
-                return RedirectToAction("Index", "Profile");
+                return RedirectToAction("Index", "Dashboard");
             }
 
             return View();
