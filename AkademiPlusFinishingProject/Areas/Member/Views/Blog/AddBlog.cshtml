@@ -1,0 +1,31 @@
+﻿@model EntityLayer.Concrete.Blog
+@{
+    ViewData["Title"] = "AddBlog";
+    Layout = "~/Views/Shared/_MemberLayout.cshtml";
+}
+
+<h3>Yeni Blog Ekleme Sayfası</h3>
+<div class="container">
+    <form method="post">
+        <input type="hidden" asp-for="AppUserID" />
+        <label>Blog Başlığı</label>
+        <input type="text" asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title"></span>
+        <br />
+        <label>Blog Görseli</label>
+        <input type="text" asp-for="BlogImage" class="form-control" />
+        <span asp-validation-for="BlogImage"></span>
+        <br />
+        <label>Blog Kategorisi</label>
+        @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.cv, new { @class = "form-control" })
+        <span asp-validation-for="Category"></span>
+        <br />
+        <label>Blog Yazısı</label>
+        @*<input type="text" asp-for="Description" class="form-control" />*@
+        @Html.TextAreaFor(x => x.Description, 10, 3, new { @class = "form-control" })
+        <span asp-validation-for="Description"></span>
+        <br />
+        <button class="btn btn-outline-success">Oluştur</button>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    </form>
+</div>

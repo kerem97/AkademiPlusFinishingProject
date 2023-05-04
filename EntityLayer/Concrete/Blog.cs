@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace EntityLayer.Concrete
     {
         public int BLogID { get; set; }
         public string BlogImage { get; set; }
+       
         public DateTime AddDate { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
