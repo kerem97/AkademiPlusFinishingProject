@@ -26,16 +26,16 @@ namespace AkademiPlusFinishingProject.Controllers
             return View();
         }
         [HttpPost]
-        
+
         public async Task<IActionResult> Index(LoginViewModel lgn)
         {
             AppUser appUser = await _userManager.FindByNameAsync(lgn.Username);
 
             var result = await _signInManager.PasswordSignInAsync(lgn.Username, lgn.Password, false, false);
 
-            if (result.Succeeded )
+            if (result.Succeeded)
             {
-                return RedirectToAction("Index", "Dashboard", new { area = "Member" });
+                return RedirectToAction("PathFinder", "Login");
             }
 
             //else
@@ -51,6 +51,19 @@ namespace AkademiPlusFinishingProject.Controllers
             }
             return View();
         }
+
+        public IActionResult PathFinder()
+        {
+            if (User.IsInRole("Admin"))
+            {
+                return RedirectToAction("Index", "Dashboard", new { area = "Admin" });
+            }
+            if (User.IsInRole("Member"))
+            {
+                return RedirectToAction("Index", "Dashboard", new { area = "Member" });
+            }
+            return View();
+        }
         public async Task<IActionResult> Logout()
         {
 
@@ -63,37 +76,37 @@ namespace AkademiPlusFinishingProject.Controllers
             return View();
         }
 
-        [HttpGet]
-        public IActionResult AdminLogin()
-        {
-            return View();
-        }
-        [HttpPost]
+        //[HttpGet]
+        //public IActionResult AdminLogin()
+        //{
+        //    return View();
+        //}
+        //[HttpPost]
 
-        public async Task<IActionResult> AdminLogin(LoginViewModel lgn)
-        {
-            AppUser appUser = await _userManager.FindByNameAsync(lgn.Username);
+        //public async Task<IActionResult> AdminLogin(LoginViewModel lgn)
+        //{
+        //    AppUser appUser = await _userManager.FindByNameAsync(lgn.Username);
 
-            var result = await _signInManager.PasswordSignInAsync(lgn.Username, lgn.Password, false, false);
+        //    var result = await _signInManager.PasswordSignInAsync(lgn.Username, lgn.Password, false, false);
 
-            if (result.Succeeded)
-            {
-                return RedirectToAction("Index", "Dashboard", new { area = "Admin" });
-            }
+        //    if (result.Succeeded)
+        //    {
+        //        return RedirectToAction("Index", "Dashboard", new { area = "Admin" });
+        //    }
 
-            //else
-            //{
-            //    ModelState.AddModelError(" ", "Lütfen mail adresinizi onaylayınız");
-            //    return View();
-            //}
+        //    //else
+        //    //{
+        //    //    ModelState.AddModelError(" ", "Lütfen mail adresinizi onaylayınız");
+        //    //    return View();
+        //    //}
 
-            if (_userManager.IsEmailConfirmedAsync(appUser).Result == false)
-            {
-                ModelState.AddModelError("", "Buradan sadece admin olarak giriş yapabilmek mümkündür.");
-                return View(lgn);
-            }
-            return View();
-        }
+        //    if (_userManager.IsEmailConfirmedAsync(appUser).Result == false)
+        //    {
+        //        ModelState.AddModelError("", "Buradan sadece admin olarak giriş yapabilmek mümkündür.");
+        //        return View(lgn);
+        //    }
+        //    return View();
+        //}
 
     }
 }

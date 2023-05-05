@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AkademiPlusFinishingProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    
+    [Authorize(Roles = "Admin")]
     public class CategoryController : Controller
     {
         private readonly ICategoryService _categoryService;

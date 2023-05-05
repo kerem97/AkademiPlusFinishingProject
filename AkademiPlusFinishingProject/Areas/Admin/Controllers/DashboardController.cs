@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AkademiPlusFinishingProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    
+    [Authorize(Roles = "Admin")]
     public class DashboardController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
@@ -17,7 +17,7 @@ namespace AkademiPlusFinishingProject.Areas.Admin.Controllers
             _userManager = userManager;
         }
 
-        //[Authorize(Roles = "Admin")]
+        
         public async Task<IActionResult> Index()
         {
             var values = await _userManager.FindByNameAsync(User.Identity.Name);

@@ -13,7 +13,7 @@ using System.Data;
 namespace AkademiPlusFinishingProject.Areas.Member.Controllers
 {
     [Area("Member")]
-  
+    [Authorize(Roles = "Member")]
     public class BlogController : Controller
     {
         private readonly UserManager<AppUser> _userManager;

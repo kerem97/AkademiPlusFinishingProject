@@ -8,7 +8,7 @@ namespace AkademiPlusFinishingProject.Areas.Member.Controllers
 {
     [Area("Member")]
     [Route("Member/[controller]/[action]")]
-  
+    [Authorize(Roles = "Member")]
     public class ProfileController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
