@@ -1,0 +1,30 @@
+﻿@model NewArrival
+@{
+    ViewData["Title"] = "UpdateNewArrival";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Ürün Bilgileri Güncelleme Sayfası</h1>
+<br />
+<form method="post">
+    <input type="hidden" asp-for="NewArrivalID" />
+    <label>Ürün Adı</label>
+    <input class="form-control" asp-for="Name" />
+    <br />
+    <label>Eski Fiyat</label>
+    <input class="form-control" asp-for="OldPrice" />
+    <br />
+    <label>Yeni Fiyat</label>
+    <input class="form-control" asp-for="NewPrice" />
+    <br />
+    <label>Ürün Görseli</label>
+    <input class="form-control" asp-for="Image1" />
+    <br />
+    <label>Ürün Görseli 2</label>
+    <input class="form-control" asp-for="Image2" />
+    <br />
+    <label>İndirim Oranı</label>
+    <input class="form-control" asp-for="Discount" />
+    <br />
+    <button class="btn btn-outline-primary">Kaydet</button>
+</form>

@@ -1,0 +1,108 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>İstatistikler</h1>
+
+<div class="row">
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-gradient-info">
+            <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">Toplam Kategori Sayısı</span>
+                <span class="info-box-number">@ViewBag.categoryCount</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-gradient-success">
+            <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">Toplam Yeni Ürün Sayısı</span>
+                <span class="info-box-number">@ViewBag.newArrivalsCount</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-gradient-danger">
+            <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">Toplam Blog Sayısı</span>
+                <span class="info-box-number">@ViewBag.blogCount</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-gradient-info">
+            <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">%50 İndirim Üzerindeki Ürünler</span>
+                <span class="info-box-number">@ViewBag.discount</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-gradient-dark">
+            <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">100₺ Altındaki Ürün Sayısı</span>
+                <span class="info-box-number">@ViewBag.priceUnder100</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-gradient-warning">
+            <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">Ortalama Ürün Fiyatı</span>
+                <span class="info-box-number">@ViewBag.avgPrice₺</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-gradient-warning">
+            <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">Sponsor Sayısı</span>
+                <span class="info-box-number">@ViewBag.brandsCount</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-gradient-primary">
+            <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">Üye Sayısı</span>
+                <span class="info-box-number">@ViewBag.userCount</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-gradient-primary">
+            <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">Gelen Mesaj Sayısı</span>
+                <span class="info-box-number">@ViewBag.contactCount</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-gradient-success">
+            <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">Bültene Abone Sayısı</span>
+                <span class="info-box-number">@ViewBag.subscribeCount</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-12">
+        <div class="info-box bg-gradient-danger">
+            <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text">Toplam Yapılan Yorum Sayısı</span>
+                <span class="info-box-number">@ViewBag.commentCount</span>
+            </div>
+        </div>
+    </div>
+</div>

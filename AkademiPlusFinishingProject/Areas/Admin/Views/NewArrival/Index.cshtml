@@ -1,0 +1,37 @@
+﻿@model List<NewArrival>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h3 class="card-title">Son Eklenen Ürünler</h3>
+
+<table class="table table-hover">
+
+    <tr>
+        <th>ID</th>
+        <th>Ürün Adı</th>
+        <th>Eski Fiyat</th>
+        <th>Güncel Fiyat</th>
+        <th>İndirim oranı</th>
+        <th>Eklenme Tarihi</th>
+     
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.NewArrivalID</td>
+            <td>@x.Name</td>
+            <td>@x.OldPrice₺</td>
+            <td>@x.NewPrice₺</td>
+            <td>@x.Discount%</td>
+            <td>@(((DateTime)x.AddDate).ToString("dd-MMM-yyyy"))</td>         
+            <td><a href="/Admin/NewArrival/DeleteNewArrival/@x.NewArrivalID" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Admin/NewArrival/UpdateNewArrival/@x.NewArrivalID" class="btn btn-outline-warning">Güncelle</a></td>
+        </tr>
+    }
+</table>
