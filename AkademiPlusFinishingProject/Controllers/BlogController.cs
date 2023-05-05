@@ -1,10 +1,12 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AkademiPlusFinishingProject.Controllers
 {
+    [AllowAnonymous]
     public class BlogController : Controller
     {
         private readonly IBlogService _blogService;
@@ -21,8 +23,8 @@ namespace AkademiPlusFinishingProject.Controllers
         {
 
             var values = _blogService.TGetList();
-          
-            return View(values);
+            var category = _blogService.TGetBlogByCategory();
+            return View(category);
         }
 
         public ActionResult BlogDetails(int id)

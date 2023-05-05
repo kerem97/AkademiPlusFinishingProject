@@ -17,7 +17,7 @@
                     <div class="blog-info">
                         <div class="blog-info-top">
                             <span>@(((DateTime)x.AddDate).ToString("dd-MMM-yyyy"))</span> -
-                            <span>0 Yorum</span>
+                            <span>@x.Category.CategoryName</span>
                         </div>
                         <div class="blog-info-center">
                             <a href="#">@x.Title</a>

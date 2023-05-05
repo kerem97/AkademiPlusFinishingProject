@@ -4,13 +4,16 @@ using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Data;
 
 namespace AkademiPlusFinishingProject.Areas.Member.Controllers
 {
     [Area("Member")]
+  
     public class BlogController : Controller
     {
         private readonly UserManager<AppUser> _userManager;

@@ -6,8 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AkademiPlusFinishingProject.Areas.Member.Controllers
 {
+
     [Area("Member")]
-    //[Authorize(Roles = "Member")]
+
+
     public class DashboardController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
@@ -19,9 +21,10 @@ namespace AkademiPlusFinishingProject.Areas.Member.Controllers
             _blogService = blogService;
         }
 
-       
+        //[Authorize(Roles = "Member")]
         public async Task<IActionResult> Index()
         {
+
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
             ViewBag.userName = values.Name + " " + values.Surname;
             var getlastblogs = _blogService.TGetLast3Blog();

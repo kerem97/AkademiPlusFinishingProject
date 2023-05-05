@@ -8,6 +8,7 @@ namespace AkademiPlusFinishingProject.Areas.Member.Controllers
 {
     [Area("Member")]
     [Route("Member/[controller]/[action]")]
+  
     public class ProfileController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
@@ -47,6 +48,8 @@ namespace AkademiPlusFinishingProject.Areas.Member.Controllers
             }
             user.Name = model.name;
             user.Surname = model.surname;
+            user.PhoneNumber = model.phonenumber;
+            user.Email = model.mail;
             user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, model.password);
             var result = await _userManager.UpdateAsync(user);
             if (result.Succeeded)

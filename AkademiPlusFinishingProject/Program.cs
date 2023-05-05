@@ -71,8 +71,6 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 
 
-builder.Services.AddSession();
-
 
 //builder.Services.AddIdentity<AppUser, AppRole>(options =>
 //{
