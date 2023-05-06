@@ -1,8 +1,30 @@
-﻿@model Blog
+﻿@model List<Blog>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
-<h1>Index</h1>
-
+<div class="card-body">
+    <table id="example1" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>BlogID</th>
+                <th>Başlık</th>
+                <th>Eklenme Tarihi</th>
+                <th>Kategorisi</th>
+                <th>Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.BLogID</td>
+                    <td>@x.Title</td>
+                    <td>@(((DateTime)x.AddDate).ToString("dd-MMM-yyyy"))</td>
+                    <td>@x.Category.CategoryName</td>
+                    <td><a href="/Admin/Blog/DeleteBlog/@x.BLogID" class="btn btn-outline-danger">Sil</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

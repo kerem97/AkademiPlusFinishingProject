@@ -1,0 +1,142 @@
+﻿@using EntityLayer.Concrete
+@model NewArrival
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+<section class="single-product">
+    <div class="container">
+        <div class="single-product-wrapper">
+            <div class="single-content">
+                <main class="site-main">
+                    <div class="product-gallery">
+                        <div class="single-image-wrapper">
+                            <img src="@Model.Image1" id="single-image" alt="">
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h1 class="product-title">
+                            @Model.Name
+                        </h1>
+
+                        <div class="product-price">
+                            <s class="old-price">@Model.OldPrice</s>
+                            <strong class="new-price">@Model.NewPrice</strong>
+                        </div>
+                        <p class="product-description">
+                            @Model.Description2
+                        </p>
+                        <form class="variations-form">
+                            <div class="variations">
+                                <div class="colors">
+                                    <div class="colors-label">
+                                        <span>Renk</span>
+                                    </div>
+                                    <div class="colors-wrapper">
+                                        <div class="color-wrapper">
+                                            <label class="blue-color">
+                                                <input type="radio" name="product-color">
+                                            </label>
+                                        </div>
+                                        <div class="color-wrapper">
+                                            <label class="red-color">
+                                                <input type="radio" name="product-color">
+                                            </label>
+                                        </div>
+                                        <div class="color-wrapper active">
+                                            <label class="green-color">
+                                                <input type="radio" name="product-color">
+                                            </label>
+                                        </div>
+                                        <div class="color-wrapper">
+                                            <label class="purple-color">
+                                                <input type="radio" name="product-color">
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="values">
+                                    <div class="values-label">
+                                        <span>Beden</span>
+                                    </div>
+                                    <div class="values-list">
+                                        <span class="active">XS</span>
+                                        <span>S</span>
+                                        <span>M</span>
+                                        <span>L</span>
+                                        <span>XL</span>
+                                    </div>
+                                </div>
+                                <div class="cart-button">
+                                    <input type="number" value="1" min="1" id="quantity">
+                                    <a href="#" class="btn btn-lg btn-primary" id="add-to-cart" type="button">
+                                        Sepete Ekle
+                                    </a>
+                                </div>
+                                <div class="product-extra-buttons">
+                                    <a href="#">
+                                        <i class="bi bi-globe"></i>
+                                        <span>Bedenler</span>
+                                    </a>
+                                    <a href="#">
+                                        <i class="bi bi-heart"></i>
+                                        <span>Favorilere Ekle</span>
+                                    </a>
+                                    <a href="#">
+                                        <i class="bi bi-share"></i>
+                                        <span>Ürünü paylaş</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="divider"></div>
+
+                    </div>
+                </main>
+            </div>
+            <div class="single-tabs">
+                <ul class="tab-list">
+                    <li>
+                        <a href="#" class="tab-button active" data-id="desc">Ürün Açıklaması</a>
+                    </li>
+                    <li>
+                        <a href="#" class="tab-button" data-id="info">
+                            Ürün Bilgileri
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-panel">
+                    <div class="tab-panel-descriptions content active" id="desc">
+                        <p>
+                            @Model.Description2
+                        </p>
+                    </div>
+                    <div class="tab-panel-information content" id="info">
+                        <h3>Ürün Bilgileri</h3>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Renkler</th>
+                                    <td>
+                                        <p>
+                                            Kırmızı, Lacivert,Turuncu,Mavi, Sarı, Pembe, Siyah, Beyaz
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Beden</th>
+                                    <td>
+                                        <p>
+                                            XXS, XS, S, M, L, XL, XXL
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

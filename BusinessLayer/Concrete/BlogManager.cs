@@ -61,5 +61,7 @@ namespace BusinessLayer.Concrete
         {
             return _blogDal.GetLast3Blog();
         }
+
+       
     }
 }

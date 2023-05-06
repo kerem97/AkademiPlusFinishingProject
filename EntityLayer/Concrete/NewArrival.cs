@@ -16,7 +16,10 @@ namespace EntityLayer.Concrete
 
         public double OldPrice { get; set; }
         public double NewPrice { get; set; }
+
         public int Discount { get; set; }
+        public string? Description { get; set; }
+        public string? Description2 { get; set; }
 
         public DateTime AddDate { get; set; }
     }

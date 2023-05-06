@@ -12,5 +12,7 @@ namespace DataAccessLayer.Abstract
         List<Blog> GetListbyCategory();
 
         List<Blog> GetLast3Blog();
+
+       
     }
 }

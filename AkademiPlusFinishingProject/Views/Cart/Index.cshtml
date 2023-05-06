@@ -1,0 +1,99 @@
+﻿@using EntityLayer.Concrete
+@model NewArrival
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <section class="cart-page">
+        <div class="container">
+            <div class="cart-page-wrapper">
+                <form class="cart-form">
+                    <div class="free-progress-bar">
+                        <p class="progress-bar-title">
+                            Add <strong>$161.00</strong> to cart and get free shipping!
+                        </p>
+                        <div class="progress-bar">
+                            <span class="progress"></span>
+                        </div>
+                    </div>
+                    <div class="shop-table-wrapper">
+                        <table class="shop-table">
+                            <thead>
+                            <th class="product-thumbnail">&nbsp;</th>
+                            <th class="product-thumbnail">&nbsp;</th>
+                            <th class="product-name">Product</th>
+                            <th class="product-price">Price</th>
+                            <th class="product-quantity">Quantity</th>
+                            <th class="product-subtotal">Subtotal</th>
+                            </thead>
+                            <tbody class="cart-wrapper">
+                       
+                            
+                            </tbody>
+                        </table>
+                        <div class="actions-wrapper">
+                            <div class="coupon">
+                                <input type="text" class="input-text" placeholder="Coupon code">
+                                <button class="btn">Apply Coupon</button>
+                            </div>
+                            <div class="update-cart">
+                                <button class="btn">Update Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="cart-collaterals">
+                    <div class="cart-totals">
+                        <h2>
+                            Cart totals
+                        </h2>
+                        <table>
+                            <tbody>
+                                <tr class="cart-subtotal">
+                                    <th>Subtotal</th>
+                                    <td>
+                                        <span id="subtotal">$316.00</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Shipping</th>
+                                    <td>
+                                        <ul>
+                                            <li>
+                                                <label>
+                                                    Fast Cargo: $15.00
+                                                    <input type="checkbox" id="fast-cargo">
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <a href="#">Change Address</a>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Total</th>
+                                    <td>
+                                        <strong id="cart-total">$316.00</strong>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="checkout">
+                            <button class="btn btn-lg">Proceed to checkout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="~/e-commerce/js/main.js" type="module"></script>
+    <script src="~/e-commerce/js/cart.js" type="module"></script>
+</body>
+
+</html>
