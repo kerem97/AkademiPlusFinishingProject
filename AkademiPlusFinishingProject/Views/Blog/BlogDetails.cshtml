@@ -17,20 +17,13 @@
                 </figure>
                 <div class="blog-wrapper">
                     <div class="blog-meta">
-                        <div class="blog-category">
-                            <a href="#">
-                                COLLECTION
-                            </a>
-                        </div>
+                      
                         <div class="blog-date">
                             <a href="#">
                                 @(((DateTime)x.AddDate).ToString("dd-MMM-yyyy"))
                             </a>
                         </div>
-                        <div class="blog-tags">
-                            <a href="#">products</a>,
-                            <a href="#">coats</a>
-                        </div>
+                     
                     </div>
                     <h1 class="blog-title">@x.Title</h1>
                     <div class="blog-content">
@@ -44,11 +37,11 @@
 
 
         <div class="tab-panel-reviews">
-            <h3>2 reviews for Basic Colored Sweatpants With Elastic Hems</h3>
+            <h3>Bu Bloğa Ait Yorumları İnceleyebilirsiniz</h3>
             @await Component.InvokeAsync("_CommentListByBlog",new{id=ViewBag.i})
             <!-- comment form start -->
             <div class="review-form-wrapper">
-                <h2>Add a review</h2>
+                <h2>Bir Yorum Yaz</h2>
                 <form class="comment-form" method="post" action="/Comment/Addcomment">
                     <input type="hidden" name="BLogID" value="@ViewBag.i" />
                     <p class="comment-notes">
