@@ -19,4 +19,28 @@ Veri tabanı olarak SQL Server kullanılarak , EntityLayer , UI Layer , DataAccc
 14. Dependicy Injection yoğun bir şekilde kullanılara Ef bağımlılığı ortadan kaldırıldı.
 15. 404 not found sayfası ve AccessDenied sayfası  oluşturuldu.
 16. Idendity Role ile kullanıcılara rol atamaları yapılarak login olan kullanıcının rolüne göre admin veya üye sayfalarına yönlendirildi.
-17. 
+
+## Proje Görselleri
+![E-Commerce](https://github.com/kerem97/AkademiPlusFinishingProject/blob/master/ProjectImages/ProjectImages/1.PNG)
+![E-Commerce](https://github.com/kerem97/AkademiPlusFinishingProject/blob/master/ProjectImages/ProjectImages/2.PNG)
+![E-Commerce](https://github.com/kerem97/AkademiPlusFinishingProject/blob/master/ProjectImages/ProjectImages/3.PNG)
+![E-Commerce](https://github.com/kerem97/AkademiPlusFinishingProject/blob/master/ProjectImages/ProjectImages/4.PNG)
+![E-Commerce](https://github.com/kerem97/AkademiPlusFinishingProject/blob/master/ProjectImages/ProjectImages/5.PNG)
+![E-Commerce](https://github.com/kerem97/AkademiPlusFinishingProject/blob/master/ProjectImages/ProjectImages/6.PNG)
+![E-Commerce](https://github.com/kerem97/AkademiPlusFinishingProject/blob/master/ProjectImages/ProjectImages/7.PNG)
+![E-Commerce](https://github.com/kerem97/AkademiPlusFinishingProject/blob/master/ProjectImages/ProjectImages/8.PNG)
+![E-Commerce](https://github.com/kerem97/AkademiPlusFinishingProject/blob/master/ProjectImages/ProjectImages/9.PNG)
+![E-Commerce](https://github.com/kerem97/AkademiPlusFinishingProject/blob/master/ProjectImages/ProjectImages/10.PNG)
+![E-Commerce](https://github.com/kerem97/AkademiPlusFinishingProject/blob/master/ProjectImages/ProjectImages/11.PNG)
+![E-Commerce](https://github.com/kerem97/AkademiPlusFinishingProject/blob/master/ProjectImages/ProjectImages/12.PNG)
+![E-Commerce](https://github.com/kerem97/AkademiPlusFinishingProject/blob/master/ProjectImages/ProjectImages/13.PNG)
+![E-Commerce](https://github.com/kerem97/AkademiPlusFinishingProject/blob/master/ProjectImages/ProjectImages/14.PNG)
+![E-Commerce](https://github.com/kerem97/AkademiPlusFinishingProject/blob/master/ProjectImages/ProjectImages/15.PNG)
+![E-Commerce](https://github.com/kerem97/AkademiPlusFinishingProject/blob/master/ProjectImages/ProjectImages/16.PNG)
+![E-Commerce](https://github.com/kerem97/AkademiPlusFinishingProject/blob/master/ProjectImages/ProjectImages/17.PNG)
+![E-Commerce](https://github.com/kerem97/AkademiPlusFinishingProject/blob/master/ProjectImages/ProjectImages/18.PNG)
+![E-Commerce](https://github.com/kerem97/AkademiPlusFinishingProject/blob/master/ProjectImages/ProjectImages/19.PNG)
+![E-Commerce](https://github.com/kerem97/AkademiPlusFinishingProject/blob/master/ProjectImages/ProjectImages/20.PNG)
+![E-Commerce](https://github.com/kerem97/AkademiPlusFinishingProject/blob/master/ProjectImages/ProjectImages/21.PNG)
+
+
